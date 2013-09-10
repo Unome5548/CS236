@@ -1,0 +1,15 @@
+.(DOG)
+,???
+Schemes
+SCHe
+Rules
+Queries
+Facts
+FActs
+RulesQueries dogsarecool
+fak10diw'stri4ng is long'
+# this is a comment and is not printed
+# 'this shouldn't print'
+'this hsold print'
+id2312
+worlawk 

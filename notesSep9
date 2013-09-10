@@ -1,0 +1,89 @@
+state = START;
+input = readChar();
+while(state != ACCEPT) {
+	if(state == START){
+		if(input == QUOTE){
+			input = readChar();
+			state = STRING;
+		} else if (input == ','){
+			//Token of type comma
+		} else if (input == '.'){
+			//Token of type period
+		} else if (input == '?'){
+			//Token of type Q_mark
+		} else if (input == '('){
+			//Token of Left_Param
+		} else if (input == ')'){
+			//Token of Right_Param
+		} else if (input == ':'){
+			input = readChar();
+			state = COLON;
+		} else if (input == 'S'){
+			input = readChar();
+			state = SCHEME;
+		} else if (input == 'F'){
+			input = readChar();
+			state = FACTS;
+		} else if (input == 'R'){
+			input = readChar();
+			state = RULES;
+		} else if (input == 'Q'){
+			input = readChar();
+			state = QUERIES;
+		}
+
+	}
+	else if(state == STRING){
+		if(input == QUOTE){
+			input = readChar();
+			state = ACCEPT;
+		}else {
+			input = readChar();
+			state = STRING;
+		}
+	}
+	else if(state == COLON){
+		if(input == '-'){
+			//Token of type ColonDash
+			input = readChar();
+			state = ACCEPT;
+		}
+		else{
+			//Token of type Colon
+			state = ACCEPT;
+		}
+	}
+	else if(state == SCHEME){
+		if(input == "c"){
+			input = readChar();
+			if(input == "h"){
+				input = readChar();
+				if(input == "e"){
+					input = readChar();
+					if(input == "m"){
+						input = readChar();
+						if(input == "e"){
+							input = readChar();
+							if(input == "s"){
+								//Accept Schemes
+							}
+						}
+					}
+				}
+			}
+			//Figure out if its a Schemes
+		}
+	}
+	else if (state == FACTS){
+		if(input == "a")
+			//Figure out if its a FACTS
+	}
+	else if (state == RULES){
+		if(input == "u")
+			//Figure out if its a RULES
+	}
+	else if (state == QUERIES){
+		if(input == "u")
+			//Figure out if its a Queries
+	}
+}
